@@ -1,3 +1,76 @@
+# 2025 - 01 - 30
+
+Network data is not like other types of data (vectors, time series, etc)
+
+edges are what make the node properties: counter-intuitive -> non-indpendent
+
+changes a few edges can dramatically chage the function of the graph or not change at all
+
+small number of edges can have vary large impact
+
+network models are intuition pumps -> push our intuition up 
+
+model 1: watts-strogatz model: small world network model
+
+model 2: erdos-renyi model: the random graph model
+
+## ring network
+the ring network: staightforward, for 1st order ring, nodes arranged in circle
+n nodes, m edges
+
+$m=n+(d-1)(\frac{n}{d}) \quad edges = ``order" of ring$
+
+$\ell_{max} = \frac{n}{2d} = \theta(n)$
+
+$\langle \ell \rangle = \theta(n) = \frac{n}{4d}$
+
+$C = \frac{1}{2} \quad while \quad d=2$
+
+## Watts-strogatz model (1998)
+
+edges acts like highways with lots of interactions between them
+
+dichotomy bc 'l' is global thing and c is local. 
+
+real world networks are similarly compact and locally dense
+
+how is information not everywhere all at once?
+
+    why does every node not know infomation about all the other nodes?
+
+## 4 main types of random graph models:
+
+all assume $ Pr(i \to j \mid \theta) $ are conditionally independent
+
+1. erdos-renyi random graph 
+2. configuration model: workhorse model in network science 
+3. modular random graph
+4. spatial rings
+
+
+## erdis-renyi random graph:
+
+$G(n,p)$ where n is number of nodes and p is prob of $(i,j) \in E$
+
+if p is one we get a clique, and p is 0 we get an empty graph
+
+edges are iid
+
+$\forall_{i>j} \quad A_{ij} = A_{ji} = \text{1 with prob p and 0 otherwise} \to p = \frac{c}{n-1} $
+
+properties
+- simple graph $\to$ generalizing to digraph is staightforward
+- connectivity: homogeneous, driven by p parameter (edges are iid)
+- $ Pr(k) \sim \text{Poisson}(c = p(n-1)) $
+- compact network $\ell_{max} \sim O(ln(n))$
+- $C = O(\frac{1}{n}) \to$ locally tree like
+- LCC is large if $c \geq 1$ but if $c<1$ then LCC = $O(1)$
+
+Mean degree $c = \langle k \rangle = E[k]$
+
+for general p, $Pr(m) = $
+
+
 # 2025 - 01 - 28
 
 motif's - 
