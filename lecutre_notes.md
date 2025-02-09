@@ -1,3 +1,23 @@
+# 2025 - 02 - 06
+
+the configuration model -- 
+
+properties of config model random graphs
+
+- four main flavors: simple, multi graphs with/without self loops
+
+- connectivity is specified via $k vector \implies$ big impact on $\langle k \rangle$ and $\langle k^2 \rangle$
+
+- 
+
+
+# 2025 - 02 - 04
+
+Surprise # 1: a phase transition in connectedness. 
+
+Surprise # 2: ``small world'' networks and short paths
+
+
 # 2025 - 01 - 30
 
 Network data is not like other types of data (vectors, time series, etc)
