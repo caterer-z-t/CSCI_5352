@@ -1,3 +1,64 @@
+# 2025 - 02 - 13
+
+Predicting missing attributes
+
+Predicting missinfg node attributes
+
+let $G = (V, E)$ be a fully observred set of nodes and links and $\vec{x}$ is a is a vector of node metadata and $x_i$ is attribute of node $i$ such as categorical, scalor, or entire vector
+
+for each $x_i^o = missing$ how can we makme a goood guess $x_i^*$ of its true value using $x_i$ only $G$ and $\vec{x^o}$
+
+the baseline algorithm, global predictor: why is this baseline, bc it is slightly better than guessing at random -- the graph is missing, no informaiton about neighbors -- still works when no edges
+
+homoply -- assorative mixing -- like tends to link with like
+
+disassortative mixing -- like tends to associate with dislikes or opposites
+
+local smoothing algorithm -- define a neighborhood
+
+$\nu_{i}$ such that $Z_o{X_{nu_{(i)}}}$: set of neighborhoods of i
+
+need to make sure the order of the prediction matters and not imputing missing values before computing all values
+
+order of the predictions does matter but make it so it doenst, ie keep predictions seperate from data
+
+what to do if all neighbors are missing attributes -- mode of null is undefined -- use baseline
+
+measuring performance: the confusion matrix C -- organization of all the errors
+
+Accuracy = $\frac{number of correct predictions}{number of inputs} = \frac{ \sum_p C_{pp}}{ \sum_{p,q} C_{pq}} = \frac{1}{N}\sum_{p}C_{pp}$
+
+while performance when $X_i$ is a scalor we use Acc = Pearson $r^2$
+
+
+
+# 2025 - 02 - 11
+
+predictions
+
+1. missing edges
+2. missing edge attributes
+3. missing node attributes
+4. missing nodes
+
+predicting missing node attributes:
+
+given full network
+
+$\vec{x^0}$ node attributs (observed)
+
+$x_i^0 = \null$ if attribute is missing
+
+predicting missing links:
+
+$G^0 = (V, E^0) where V is fully known and E^0 is observed$ where $G=(V,E) is ground truth$
+
+$X$ is observed unconnected pairs = $V \cross V - E^0$
+
+$Y$ is true missing links $E - E^0$
+
+Missing link attributed - 
+
 # 2025 - 02 - 06
 
 the configuration model -- 
