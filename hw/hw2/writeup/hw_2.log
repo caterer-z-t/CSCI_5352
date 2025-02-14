@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2025.1.17)  13 FEB 2025 21:49
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2025.1.17)  14 FEB 2025 07:34
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -351,24 +351,24 @@ File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
 {/Users/zc/Library/TinyTeX/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/Users/zc/Library/TinyTeX/texmf-dist/fonts/enc/dvips/base/8r.enc}]
 
 [2]
-Underfull \hbox (badness 10000) in paragraph at lines 123--124
+Underfull \hbox (badness 10000) in paragraph at lines 124--125
 
  []
 
 <../figures/network_evolution.png, id=37, 722.7pt x 433.62pt>
 File: ../figures/network_evolution.png Graphic file (type png)
 <use ../figures/network_evolution.png>
-Package pdftex.def Info: ../figures/network_evolution.png  used on input line 130.
+Package pdftex.def Info: ../figures/network_evolution.png  used on input line 131.
 (pdftex.def)             Requested size: 375.80544pt x 225.48369pt.
 <../figures/zebra_clustering.png, id=39, 462.528pt x 346.896pt>
 File: ../figures/zebra_clustering.png Graphic file (type png)
 <use ../figures/zebra_clustering.png>
-Package pdftex.def Info: ../figures/zebra_clustering.png  used on input line 142.
+Package pdftex.def Info: ../figures/zebra_clustering.png  used on input line 143.
 (pdftex.def)             Requested size: 211.38832pt x 158.54192pt.
 <../figures/zebra_path.png, id=40, 462.528pt x 346.896pt>
 File: ../figures/zebra_path.png Graphic file (type png)
 <use ../figures/zebra_path.png>
-Package pdftex.def Info: ../figures/zebra_path.png  used on input line 149.
+Package pdftex.def Info: ../figures/zebra_path.png  used on input line 150.
 (pdftex.def)             Requested size: 211.38832pt x 158.54192pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
@@ -379,12 +379,12 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 <../figures/food_clustering.png, id=51, 462.528pt x 346.896pt>
 File: ../figures/food_clustering.png Graphic file (type png)
 <use ../figures/food_clustering.png>
-Package pdftex.def Info: ../figures/food_clustering.png  used on input line 166.
+Package pdftex.def Info: ../figures/food_clustering.png  used on input line 167.
 (pdftex.def)             Requested size: 211.38832pt x 158.54192pt.
 <../figures/food_path.png, id=52, 462.528pt x 346.896pt>
 File: ../figures/food_path.png Graphic file (type png)
 <use ../figures/food_path.png>
-Package pdftex.def Info: ../figures/food_path.png  used on input line 173.
+Package pdftex.def Info: ../figures/food_path.png  used on input line 174.
 (pdftex.def)             Requested size: 211.38832pt x 158.54192pt.
 
 
@@ -392,17 +392,17 @@ Package pdftex.def Info: ../figures/food_path.png  used on input line 173.
 <../figures/connectome_clustering.png, id=64, 462.528pt x 346.896pt>
 File: ../figures/connectome_clustering.png Graphic file (type png)
 <use ../figures/connectome_clustering.png>
-Package pdftex.def Info: ../figures/connectome_clustering.png  used on input line 190.
+Package pdftex.def Info: ../figures/connectome_clustering.png  used on input line 191.
 (pdftex.def)             Requested size: 211.38832pt x 158.54192pt.
 <../figures/connectome_path.png, id=65, 462.528pt x 346.896pt>
 File: ../figures/connectome_path.png Graphic file (type png)
 <use ../figures/connectome_path.png>
-Package pdftex.def Info: ../figures/connectome_path.png  used on input line 197.
+Package pdftex.def Info: ../figures/connectome_path.png  used on input line 198.
 (pdftex.def)             Requested size: 211.38832pt x 158.54192pt.
 <../figures/harmonic_centrality.png, id=66, 867.24pt x 433.62pt>
 File: ../figures/harmonic_centrality.png Graphic file (type png)
 <use ../figures/harmonic_centrality.png>
-Package pdftex.def Info: ../figures/harmonic_centrality.png  used on input line 212.
+Package pdftex.def Info: ../figures/harmonic_centrality.png  used on input line 213.
 (pdftex.def)             Requested size: 375.80544pt x 187.90198pt.
 
 
@@ -414,7 +414,7 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 <../figures/centrality_differences.png, id=79, 867.24pt x 433.62pt>
 File: ../figures/centrality_differences.png Graphic file (type png)
 <use ../figures/centrality_differences.png>
-Package pdftex.def Info: ../figures/centrality_differences.png  used on input line 223.
+Package pdftex.def Info: ../figures/centrality_differences.png  used on input line 224.
 (pdftex.def)             Requested size: 375.80544pt x 187.90198pt.
 
 
@@ -422,12 +422,12 @@ Package pdftex.def Info: ../figures/centrality_differences.png  used on input li
 <../figures/centrality_differences_stub_matching.png, id=90, 867.24pt x 433.62pt>
 File: ../figures/centrality_differences_stub_matching.png Graphic file (type png)
 <use ../figures/centrality_differences_stub_matching.png>
-Package pdftex.def Info: ../figures/centrality_differences_stub_matching.png  used on input line 236.
+Package pdftex.def Info: ../figures/centrality_differences_stub_matching.png  used on input line 237.
 (pdftex.def)             Requested size: 375.80544pt x 187.90198pt.
 <../figures/betweenness_distribution.png, id=91, 867.24pt x 433.62pt>
 File: ../figures/betweenness_distribution.png Graphic file (type png)
 <use ../figures/betweenness_distribution.png>
-Package pdftex.def Info: ../figures/betweenness_distribution.png  used on input line 245.
+Package pdftex.def Info: ../figures/betweenness_distribution.png  used on input line 246.
 (pdftex.def)             Requested size: 375.80544pt x 187.90198pt.
 
 
