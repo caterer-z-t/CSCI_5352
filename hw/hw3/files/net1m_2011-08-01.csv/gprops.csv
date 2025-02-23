@@ -1,0 +1,6 @@
+# prop_name, value
+name,board_directors (net1m_2011-08-01)
+description,"224 networks of the affiliations among board directors due to sitting on common boards of Norwegian public limited companies (as of 5 August 2009), from May 2002 onward, in monthly snapshots through August 2011. Some metadata is included, such as director and company names, city and postal code for companies, and gender for directors. The 'net2m' data are bipartite company-director networks, while the 'net1m' are one-mode projections containing co-memberships among directors."
+citation,"['C. Seierstad and T. Opsahl, \"For the few not the many? The effects of affirmative action on presence, prominence, and social capital of women directors in Norway.\" Scand. J. Manag. 27(1), 44-54 (2011)., http://toreopsahl.com/2010/09/30/article-for-the-few-not-the-many-the-effects-of-affirmative-action-on-presence-prominence-and-social-capital-of-women-directors-in-norway/']"
+url,http://www.boardsandgender.com/data.php
+tags,"['Social', 'Affiliation', 'Unweighted', 'Projection', 'Temporal', 'Metadata']"

@@ -1,3 +1,106 @@
+# 2025 - 02 -20
+
+advanced methods for link predictions:
+
+main classes -- move to a supervised setup
+
+1) featureize it: turn it into classic ML $\forall_{i,j} \in X$ generate a feature vector $\vec{x_{ij}}$
+    
+    1A) topological functions of pair of $i,j$: JC, dp,  AA index, #shortest path, etc -> produces a feature vector $\vec{x_{ij}}$ -> interperatable -> include node attributes also
+
+    1B) use embedding algorithms: $\mathbb{R}^d$ find $\vec{z_c}$: poinst in space, one for each node then $d(z_i, z_j)$ is small if $(i,j) \in E$, eg GNN, deepwalk, node2vec, etc
+
+features are very flexible! but must do supervision which requires train and test set
+
+2) basyien learning function: $Pr(G|\theta)$ learn $Pr(i\to j|\hat{\theta})$ which we use to make predictions: but these models are very brittle and require a new specification for each set of assumputions, and require specalized estimation algorithms
+
+learning with ensembles:
+
+model stacking -- 2 level process $s_{\ell}(i,j, G^o)$ a base learner such as JC, DP, etc
+
+1. level 1 model: $F(\vec{x_{ij}}) \to y_{final}$
+
+2. level 0 model: $G^o$ apply base learner
+
+level 0 models, 3 types:
+
+A. Pair features - simple or not $f(i,j,G)$, $\approx$ LRA via SVD $\to \vec{x_{ij}}$
+
+B. node features - features of node: degree $k_i$, centrality $b_i \quad h_i$ betweeness and harmonic respectively, local clustering coefficient $c_i$, etc - include node attributes as metadata
+
+C. global features -- number of nodes and edges
+
+Actual: $G = (V, E)$
+
+Observed: $G' = (V, E')$
+
+true pos: $y = E-E'$
+
+true negs: $W = V \times V - E$
+
+$$X = y \cup W$$
+
+training set: $G''$ such that $G' \to^{i,j}_{\text{Prob }\alpha} \to G''= (V, E'')$
+
+$y' = E' - E''$
+
+$W' = V \times V - E'$
+
+$$X' = Y' \cup W'$$
+
+# 2025 - 02 - 18
+
+Predicting missing links:
+
+1) suggest missing/future links
+2) marshalling scarce resources
+3) compare models (cross validation)
+
+$G = (V,E)$
+
+$G^o = (V, E^o) \quad \text{where} \quad E^o \subset E \quad \text{and} \quad E^o = f(E)$
+
+unconnected pairs $x = V \times V - E^o = \theta(n^2)$
+
+missing links $y = E' - E^o = O(n)$
+
+guessing is $\frac{O(n)}{\theta(n^2)} = O(\frac{1}{n}) \quad \text{hard problem}$
+
+$score(i,j): X \to \mathbb{R} \quad \text{where} \quad i,j \in X$ 
+
+$\text{if} \quad i,j \in X \quad score(i,j) = U(0,1)$
+
+1) jaccard coefficient
+$JC(i,j) = \frac{
+    | V(i) \cap V(j)|
+}{
+    | V(i) \cup V(j)|
+}$
+
+    $score(i,j) = JC(i,j) + U(0, \epsilon), \quad \text{where } \epsilon < \frac{1}{n-2} $
+
+2) degree product
+$k_i \times k_j$
+
+    $score(i,j) = k_i k_j + U(0, \epsilon), \quad \text{where } \epsilon = 1 - \delta, \quad \text{where } \delta \approx 0$
+
+measuring performance: the auc
+
+predicting missing links is a binary classifier
+
+AUC: Area under the curve
+
+$AUC = Pr[score(TP) > score(TN)]$
+
+1) scale invariant: apply to JC and degree product
+2) threshold invariant
+
+True negatives: $\theta(|x-y|) = \theta(n^2)$
+
+True positives: $O(|y|) = O(n)$
+
+
+
 # 2025 - 02 - 13
 
 Predicting missing attributes

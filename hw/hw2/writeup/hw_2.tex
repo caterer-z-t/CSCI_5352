@@ -121,15 +121,12 @@ Rearranging:
 
 \section*{Problem 3}
 
-\textbf{\textit{Need to fix, complete, and check this section.}}\\
-
-Comment on how ``random” Berkeley’s social network was to begin with, in what ways, and
-on the rate at which randomization destroys the empirical patterns
+Figure \ref{fig:network_evolution} illustrates how the clustering coefficient and average path length of Berkeley’s social network evolve as double-edge swaps increase. Both metrics begin deviating from their empirical values around $10^3$ swaps, reaching half of their original values near $10^5$ swaps, and ultimately converging with the configuration model at approximately $10^6.5$ swaps. This pattern suggests that Berkeley’s social network initially exhibits significant structural organization rather than being purely random. The gradual destruction of empirical patterns further indicates that its formation is driven by underlying social mechanisms rather than chance alone.
 
 \begin{figure}[h]
     \centering
     \includegraphics[width=0.8\textwidth]{../figures/network_evolution.png}
-    \caption{Evolution of Network Metrics under Randomization. The network metrics are shown as the number of swaps (r/m) increases the Clustering Coefficient (C) and average path length ($\langle \ell \rangle$) of the network decreases. Additionally, the Configuration model for clustering coefficient and average path length are shown in the dashed line.}
+    \caption{Evolution of Network Metrics under Randomization. The network metrics are shown as the number of swaps (r) increases the Clustering Coefficient (C) and average path length ($\langle \ell \rangle$) of the network decreases. Additionally, the Configuration model for clustering coefficient and average path length are shown in the dashed line.}
     \label{fig:network_evolution}
 \end{figure}
 

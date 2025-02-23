@@ -1,0 +1,115 @@
+\documentclass[12pt]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath, amsthm}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{times}
+% \usepackage{subcaption}
+\usepackage[colorlinks=true, linkcolor=black, citecolor=black, urlcolor=black]{hyperref}
+
+
+\title{CSCI 5352: Homework 3}
+\author{
+    Zachary Caterer$^{1,2,3}$ \\
+    \small $^1$Department of Computer Science, University of Colorado Boulder \\
+    \small $^2$Department of Chemical and Biological Engineering, University of Colorado Boulder \\
+    \small $^3$Interdisciplinary Quantitative Biology Program, University of Colorado Boulder
+}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\subsection*{Collaborators}
+I worked with the following people on this assignment:
+
+\begin{itemize}
+    \item Ben Braun
+    \item Logan Barrios
+    \item Luis Paez
+    \item Michael Luzadder
+    \item Pedro Lemos
+\end{itemize}
+
+\section*{Problem 1}
+
+\subsection*{Part A}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.95\textwidth]{../figures/combined_plot.png}
+    \caption{Prediction accuracy as a function of $\alpha$ for the two networks, Norweigen Board of Directors and Malaria var DBLa HVR networks. The solid lines represent the accuracy of the Board of Directors network and the dashed lines represent the accuracy of the Malaria network. The red line indicates the accuracy of the baseline prediction algorithm while the black line indicates the accuracy of the local smoothing heuristic algorithm.}
+    \label{fig:Prediction_accuracy}
+\end{figure}
+
+The prediction accuracy for the Malaria and the Norweigen Board of Director networks as a function of the fraction of $\alpha$ is shown in Figure \ref{fig:Prediction_accuracy}. The solid lines represent the prediction accuracy of the Malaria network while the dashed lines represent the prediction accuracy of the Board of Directors network. The red line indicates the accuracy of the baseline prediction algorithm while the black line indicates the accuracy of the local smoothing heuristic algorithm. The local smoothing heurisitic algorithm has a greater accuracy than the baseline prediction algorithm for both networks. This is true for most $\alpha$ values, however there are few instances where the baseline prediction algorithm has equilivient or marginal improvement over the smoothing heurisitic algorithm across varying $\alpha$ values. In both networks the prediction accuracy peaks right before an $\alpha = 1.0$ and usually has its minimim close to this peak, $~\alpha = 0.9$. The Malaria network has a higher prediction accuracy than the Board of Directors network for most $\alpha$ values. The Malaria network has a prediction accuracy of 0.8 while the Board of Directors network has a prediction accuracy of 0.6. The prediction accuracy of the baseline prediction algorithm is 0.5 for both networks. Additionally the prediction accuracy for small values of $\alpha \in [0,0.25]$ gradually raises, then remains pretty consistent for $\alpha \in [0.25,0.75]$. Additionally there is a larger difference between the baseline prediction algorithm and the smoothing heurisitic algorithm for the board of directors network compared to the malaria network. 
+
+\begin{itemize}
+    \item Derive mathematically the expected accuracy for the baseline predictor (guessing a missing label uniformly at random from $\sim x_o$); calculate the baseline expectation for the two networks, and comment on how the results of your experiment compare to this baseline    
+\end{itemize}
+
+\subsection*{Part B}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.95\textwidth]{../figures/accuracy_vs_randomization.png}
+    \caption{Prediction accuracy as a function of the number of randomizations of fraction of $\beta$ for the two networks, Norweigen Board of Directors and Malaria var DBLa HVR networks. The solid lines represent the prediction accuracy while the dashed lines represent the baseline accuracy. The red line indicates the accuracy of the Malaria network while the black line indicates the accuracy of the Board of Directors network.}
+    \label{fig:accuracy_vs_randomization}
+\end{figure}
+
+In both networks the prediction accuracy as a fraction of edges under randomization with respect to $\beta$ are generally lower than the baseline prediction algorithms, this is true for most fractions of $\beta$ with marginal periods where the accuracy is the same or greater than the baseline prediction algorith, this can be see in figure \ref{fig:accuracy_vs_randomization}. The difference between the baseline and the prediction algorithm for the malaria network is larger than the difference for the board of directors network. 
+
+\section*{Problem 2}
+\subsection*{Part A}
+
+\begin{figure}[h]
+    \centering
+    \begin{minipage}{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{../figures/malaria_link_prediction_accuracy.png}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{../figures/malaria_roc_curves.png}
+    \end{minipage}
+    \caption{AUC and ROC curves for the Malaria network. The left plot shows the AUC values vs Fraction of Observed Edges for the three predictors while the right plot shows the ROC curves for the three predictors. The three predictors are Degree Product, Jaccard Coefficient, and Shortest Path. The baseline algorith is shown in the black dashed line.}
+    \label{fig:accuracy_curves_malaria}
+\end{figure}
+
+\begin{figure}[h]
+    \centering
+    \begin{minipage}{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{../figures/bod_link_prediction_accuracy.png}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{../figures/bod_roc_curves.png}
+    \end{minipage}
+    \caption{AUC and ROC curves for the Board of Directors network. The left plot shows the AUC values vs Fraction of Observed Edges for the three predictors while the right plot shows the ROC curves for the three predictors. The three predictors are Degree Product, Jaccard Coefficient, and Shortest Path. The baseline algorith is shown in the black dashed line.}
+    \label{fig:accuracy_curves_bod}
+\end{figure}
+
+In both figures (fig \ref{fig:accuracy_curves_malaria}, \ref{fig:accuracy_curves_bod}) the AUC values for the three predictors, Degree Product, Jaccard Coefficient, and Shortest Path, are shown as a function of the fraction of observed edges. The ROC curves for the three predictors are also shown. The baseline algorithm is shown as a black dashed line. The AUC values for the Degree Product predictor is the lowest preforming predictor in both the Malaria and Board of Director networks. The Jaccard Coefficient predictor is the highest preforming predictor in the Malaria network for the AUC with the fraction of observed edges being greater than 0.5, while the shortest path algorithm is the greater AUC for values of observed edges less than 0.5. The jaccard coefficient has the greatest AUC for the roc curve whith the shortest path followiong closely behind. While in the board of directors netowkr the shortest path is the best predictor for both the auc for all values of fraction of obsercved edges with there being a tie between that and the jaccard coefficient for the fraction of observed edges being in $[0.75, 1]$. Additionally, the AUC for the ROC curves show that the shortest path marginally performs better as a predictor than the jaccard coefficient, while the degree product in both instances performs close to random. 
+
+\subsection*{Part B}
+
+This problem is extra credit, I might do if I have time. 
+
+\begin{itemize}
+    \item Discuss: (i) To what extent does the stacked model’s AUC improve upon, or not, the level-0 model AUCs? And, (ii) to what extent does the stacked model’s ROC curve improve upon, or not, the level\-0 model ROC curves?
+\end{itemize}
+
+Hint: for the training data, $c = 1000$ is a good number. However, for modest-sized networks, there may not be so many true positives; in this case, we upsample the true positives by sampling with replacement until we have $c = 1000$ examples.
+
+\section*{Problem 3}
+
+I read the paper ``Revisiting the Foundations of Network Analysis'' by Carter Butts. The paper addresses the fundamental question of how to appropriately choose network representations for studying complex systems. The author approached this through a conceptual and analytical framework, examining standard assumptions of network analysis while using case studies across multiple domains including biology, sociology, and communications. Through visualizations and examples, the author demonstrated how different choices in network representation - from node aggregation to edge thresholds to temporal dynamics - can significantly impact network properties and analysis outcomes. The paper's strengths lie in its clear examples from diverse fields, effective visualizations, and compelling case studies showing real-world consequences of poor representation choices, such as in HIV transmission networks.\\
+
+\noindent However, there were opportunities for improvement and future work. The paper could have provided more specific guidelines for making network representation decisions and included more quantitative analysis of how different choices affect network metrics. Looking forward, several promising extensions are possible, including the development of formal methods for validating network representations against empirical data, creation of adaptive network representations that can change based on time scale, and integration of machine learning approaches to automatically identify appropriate levels of node aggregation. While the paper succeeds in raising awareness about the theoretical implications of network representation choices, there remains significant work to be done in developing practical tools and methods for making these choices systematically.
+
+\end{document}
