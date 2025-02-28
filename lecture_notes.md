@@ -1,3 +1,25 @@
+# 2025 - 02 - 27 
+
+
+
+# 2025 - 02 - 25
+
+modular networks, structure
+
+module = group = compartment = community
+
+a commuity is a group of nodes that connect to other groups in similar ways
+
+respresentating modular interations
+
+the mixingmatrix $M$ is a $ c \times c$ of densitities
+
+where $M_{rs}$ density of connections from group $r \to s$
+
+and $M_{rr}$ is density of connections inside group $r$
+
+
+
 # 2025 - 02 -20
 
 advanced methods for link predictions:

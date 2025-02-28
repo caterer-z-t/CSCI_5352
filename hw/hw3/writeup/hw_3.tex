@@ -37,64 +37,90 @@ I worked with the following people on this assignment:
 
 \subsection*{Part A}
 
-\begin{figure}[h]
-    \centering
-    \includegraphics[width=0.95\textwidth]{../figures/combined_plot.png}
-    \caption{Prediction accuracy as a function of $\alpha$ for the two networks, Norweigen Board of Directors and Malaria var DBLa HVR networks. The solid lines represent the accuracy of the Board of Directors network and the dashed lines represent the accuracy of the Malaria network. The red line indicates the accuracy of the baseline prediction algorithm while the black line indicates the accuracy of the local smoothing heuristic algorithm.}
-    \label{fig:Prediction_accuracy}
+\begin{figure}[h] 
+    \centering 
+    \includegraphics[width=0.95\textwidth]{../figures/combined_plot.png} 
+    \caption{Prediction accuracy as a function of $\alpha$ for the Norwegian Board of Directors and Malaria var DBLa HVR networks. The solid lines represent the accuracy of the Board of Directors network, while the dashed lines represent the accuracy of the Malaria network. The red line indicates the accuracy of the baseline prediction algorithm, while the black line represents the accuracy of the local smoothing heuristic.} 
+    \label{fig:Prediction_accuracy} 
 \end{figure}
 
-The prediction accuracy for the Malaria and the Norweigen Board of Director networks as a function of the fraction of $\alpha$ is shown in Figure \ref{fig:Prediction_accuracy}. The solid lines represent the prediction accuracy of the Malaria network while the dashed lines represent the prediction accuracy of the Board of Directors network. The red line indicates the accuracy of the baseline prediction algorithm while the black line indicates the accuracy of the local smoothing heuristic algorithm. The local smoothing heurisitic algorithm has a greater accuracy than the baseline prediction algorithm for both networks. This is true for most $\alpha$ values, however there are few instances where the baseline prediction algorithm has equilivient or marginal improvement over the smoothing heurisitic algorithm across varying $\alpha$ values. In both networks the prediction accuracy peaks right before an $\alpha = 1.0$ and usually has its minimim close to this peak, $~\alpha = 0.9$. The Malaria network has a higher prediction accuracy than the Board of Directors network for most $\alpha$ values. The Malaria network has a prediction accuracy of 0.8 while the Board of Directors network has a prediction accuracy of 0.6. The prediction accuracy of the baseline prediction algorithm is 0.5 for both networks. Additionally the prediction accuracy for small values of $\alpha \in [0,0.25]$ gradually raises, then remains pretty consistent for $\alpha \in [0.25,0.75]$. Additionally there is a larger difference between the baseline prediction algorithm and the smoothing heurisitic algorithm for the board of directors network compared to the malaria network. 
+Figure \ref{fig:Prediction_accuracy} illustrates the prediction accuracy for the Norwegian Board of Directors and Malaria var DBLa HVR networks as a function of $\alpha$, the fraction of observed node labels. The solid lines correspond to the Malaria network, while the dashed lines represent the Board of Directors network. The red line indicates the accuracy of the baseline prediction algorithm, whereas the black line shows the accuracy of the local smoothing heuristic. Across both networks, the local smoothing heuristic consistently outperforms the baseline predictor for most values of $\alpha$. However, there are occasional points where the baseline and heuristic algorithms achieve comparable accuracy, or where the baseline slightly surpasses the heuristic due to random fluctuations in label distributions. For both networks, prediction accuracy generally increases as $\alpha$ approaches 1.0, with a notable peak just before full label observability. Interestingly, accuracy tends to dip slightly around $\alpha \approx 0.9$ before reaching its maximum. This suggests that while more observed labels typically improve performance, certain structural properties of the networks may cause minor fluctuations in predictive accuracy at high $\alpha$ values. Comparing the two networks, the Malaria network achieves consistently higher accuracy than the Board of Directors network across most $\alpha$ values. Specifically, at higher values of $\alpha$, the Malaria network reaches an accuracy of approximately 0.8, whereas the Board of Directors network attains around 0.6. Meanwhile, the baseline predictor achieves an accuracy of approximately 0.5 for both networks, aligning with theoretical expectations. For small values of $\alpha$ (e.g., $\alpha \in [0, 0.25]$), accuracy increases gradually before stabilizing in the mid-range interval $\alpha \in [0.25, 0.75]$. Notably, the gap between the local smoothing heuristic and the baseline predictor is larger for the Board of Directors network than for the Malaria network. This suggests that the smoothing heuristic is particularly effective in the Board of Directors network, likely due to stronger assortative mixing in label distributions. Overall, these results reinforce the efficacy of the local smoothing heuristic in predicting missing labels and highlight differences in network structure between the two datasets. The higher accuracy of the Malaria network suggests a stronger inherent label correlation within connected nodes, whereas the Board of Directors network, despite benefiting from the heuristic, may exhibit a more complex or less assortative structure.
+
+\subsubsection*{Expected Accuracy for Baseline Predictor}
+
+Let $X$ be the set of possible categorical labels, and let $p_k$ denote the empirical probability of label $k$ in the observed dataset.
+\begin{equation}
+    \mathbb{E}[\text{ACC}] = \sum_{k \in X} p_k^2.
+\end{equation}
+This follows because, for a given node with true label $k$, the probability of randomly selecting $k$ from the observed labels is $p_k$.\\
+
+\noindent For the Malaria Network, let the label distribution be $\{p_1, p_2, \dots, p_m\}$. The expected baseline accuracy is:
+\begin{equation}
+    \mathbb{E}[\text{ACC}_{\text{Malaria}}] = \sum_{k=1}^{m} p_k^2.
+\end{equation}
+
+\noindent Similarly, for the Board of Directors network with label distribution $\{q_1, q_2, \dots, q_n\}$, the expected accuracy is:
+\begin{equation}
+    \mathbb{E}[\text{ACC}_{\text{BoD}}] = \sum_{k=1}^{n} q_k^2.
+\end{equation}
+
+\noindent Figures \ref{fig:accuracy_curves_malaria} and \ref{fig:accuracy_curves_bod} illustrate the accuracy curves for the local smoothing heuristic. The baseline predictor serves as a lower bound:
 
 \begin{itemize}
-    \item Derive mathematically the expected accuracy for the baseline predictor (guessing a missing label uniformly at random from $\sim x_o$); calculate the baseline expectation for the two networks, and comment on how the results of your experiment compare to this baseline    
+    \item In both networks, the accuracy of the local smoothing heuristic exceeds the baseline, confirming that label assortativity improves prediction.
+    \item At very low $\alpha$, accuracy approaches the baseline since there is insufficient information for smoothing.
+    \item In the mid-range $\alpha$, the heuristic significantly outperforms the baseline, benefiting from label homophily.
+    \item At very high $\alpha$, accuracy converges to 1 as most labels are directly observed.
 \end{itemize}
+
+This analysis highlights that local smoothing leverages network structure to improve classification, particularly when a moderate number of labels are observed.
+
 
 \subsection*{Part B}
 
-\begin{figure}[h]
-    \centering
-    \includegraphics[width=0.95\textwidth]{../figures/accuracy_vs_randomization.png}
-    \caption{Prediction accuracy as a function of the number of randomizations of fraction of $\beta$ for the two networks, Norweigen Board of Directors and Malaria var DBLa HVR networks. The solid lines represent the prediction accuracy while the dashed lines represent the baseline accuracy. The red line indicates the accuracy of the Malaria network while the black line indicates the accuracy of the Board of Directors network.}
-    \label{fig:accuracy_vs_randomization}
+\begin{figure}[h] 
+    \centering 
+    \includegraphics[width=0.95\textwidth]{../figures/accuracy_vs_randomization.png} 
+    \caption{Prediction accuracy as a function of the fraction of randomized edges, $\beta$, for the Norwegian Board of Directors and Malaria var DBLa HVR networks. Solid lines represent the accuracy of the local smoothing heuristic, while dashed lines indicate the baseline accuracy. The red lines correspond to the Malaria network, and the black lines correspond to the Board of Directors network.} 
+    \label{fig:accuracy_vs_randomization} 
 \end{figure}
 
-In both networks the prediction accuracy as a fraction of edges under randomization with respect to $\beta$ are generally lower than the baseline prediction algorithms, this is true for most fractions of $\beta$ with marginal periods where the accuracy is the same or greater than the baseline prediction algorith, this can be see in figure \ref{fig:accuracy_vs_randomization}. The difference between the baseline and the prediction algorithm for the malaria network is larger than the difference for the board of directors network. 
+Figure \ref{fig:accuracy_vs_randomization} illustrates the prediction accuracy as a function of the fraction of randomized edges, $\beta$, for both networks. As expected, the accuracy of the local smoothing heuristic degrades toward the baseline accuracy as $\beta$ increases. This trend supports the hypothesis that as the network structure becomes increasingly randomized, the ability of the local smoothing heuristic to leverage assortative mixing diminishes. For small values of $\beta$ (i.e., when the network remains largely intact), the local smoothing heuristic significantly outperforms the baseline predictor. However, as $\beta$ increases and the network structure becomes more randomized, the accuracy steadily declines. Once $\beta$ approaches 1 (fully randomized networks), the local smoothing heuristic’s performance converges to the baseline, as expected. A key observation is that the degradation in accuracy occurs at different rates for the two networks. The Malaria network exhibits a sharper decline in performance as $\beta$ increases, suggesting that its structure is more dependent on assortative mixing patterns. In contrast, the Board of Directors network maintains a slightly higher accuracy for intermediate values of $\beta$, indicating that its node labels may be somewhat less dependent on the local connectivity structure. Additionally, the difference between the baseline and local smoothing heuristic is initially larger in the Malaria network than in the Board of Directors network. This suggests that the Malaria network initially benefits more from the local smoothing heuristic, likely due to a stronger underlying label homophily. However, as randomization increases, this advantage is quickly lost. Overall, these results highlight the extent to which the predictive power of the local smoothing heuristic relies on the empirical structure of the network. The more assortative and structured a network is, the greater the impact of randomization on predictive accuracy. Conversely, networks with less assortative mixing may be more robust to structural perturbations.
 
 \section*{Problem 2}
 \subsection*{Part A}
 
-\begin{figure}[h]
-    \centering
-    \begin{minipage}{0.48\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{../figures/malaria_link_prediction_accuracy.png}
-    \end{minipage}
-    \hfill
-    \begin{minipage}{0.48\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{../figures/malaria_roc_curves.png}
-    \end{minipage}
-    \caption{AUC and ROC curves for the Malaria network. The left plot shows the AUC values vs Fraction of Observed Edges for the three predictors while the right plot shows the ROC curves for the three predictors. The three predictors are Degree Product, Jaccard Coefficient, and Shortest Path. The baseline algorith is shown in the black dashed line.}
-    \label{fig:accuracy_curves_malaria}
+\begin{figure}[h] 
+    \centering 
+    \begin{minipage}{0.48\textwidth} 
+        \centering 
+        \includegraphics[width=\textwidth]{../figures/malaria_link_prediction_accuracy.png} 
+    \end{minipage} 
+    \hfill 
+    \begin{minipage}{0.48\textwidth} 
+        \centering 
+        \includegraphics[width=\textwidth]{../figures/malaria_roc_curves.png} 
+    \end{minipage} 
+    \caption{AUC and ROC curves for the Malaria network. The left plot shows the AUC values as a function of the fraction of observed edges for three predictors, while the right plot presents the corresponding ROC curves. The predictors include Degree Product, Jaccard Coefficient, and Shortest Path. The baseline algorithm is represented by the black dashed line.} 
+    \label{fig:accuracy_curves_malaria} 
 \end{figure}
 
-\begin{figure}[h]
-    \centering
-    \begin{minipage}{0.48\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{../figures/bod_link_prediction_accuracy.png}
-    \end{minipage}
-    \hfill
-    \begin{minipage}{0.48\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{../figures/bod_roc_curves.png}
-    \end{minipage}
-    \caption{AUC and ROC curves for the Board of Directors network. The left plot shows the AUC values vs Fraction of Observed Edges for the three predictors while the right plot shows the ROC curves for the three predictors. The three predictors are Degree Product, Jaccard Coefficient, and Shortest Path. The baseline algorith is shown in the black dashed line.}
-    \label{fig:accuracy_curves_bod}
+\begin{figure}[h] 
+    \centering 
+    \begin{minipage}{0.48\textwidth} 
+        \centering 
+        \includegraphics[width=\textwidth]{../figures/bod_link_prediction_accuracy.png} 
+    \end{minipage} 
+    \hfill 
+    \begin{minipage}{0.48\textwidth} 
+        \centering 
+        \includegraphics[width=\textwidth]{../figures/bod_roc_curves.png} 
+    \end{minipage} 
+    \caption{AUC and ROC curves for the Board of Directors network. The left plot shows the AUC values as a function of the fraction of observed edges for three predictors, while the right plot presents the corresponding ROC curves. The predictors include Degree Product, Jaccard Coefficient, and Shortest Path. The baseline algorithm is represented by the black dashed line.} 
+    \label{fig:accuracy_curves_bod} 
 \end{figure}
 
-In both figures (fig \ref{fig:accuracy_curves_malaria}, \ref{fig:accuracy_curves_bod}) the AUC values for the three predictors, Degree Product, Jaccard Coefficient, and Shortest Path, are shown as a function of the fraction of observed edges. The ROC curves for the three predictors are also shown. The baseline algorithm is shown as a black dashed line. The AUC values for the Degree Product predictor is the lowest preforming predictor in both the Malaria and Board of Director networks. The Jaccard Coefficient predictor is the highest preforming predictor in the Malaria network for the AUC with the fraction of observed edges being greater than 0.5, while the shortest path algorithm is the greater AUC for values of observed edges less than 0.5. The jaccard coefficient has the greatest AUC for the roc curve whith the shortest path followiong closely behind. While in the board of directors netowkr the shortest path is the best predictor for both the auc for all values of fraction of obsercved edges with there being a tie between that and the jaccard coefficient for the fraction of observed edges being in $[0.75, 1]$. Additionally, the AUC for the ROC curves show that the shortest path marginally performs better as a predictor than the jaccard coefficient, while the degree product in both instances performs close to random. 
+Figures \ref{fig:accuracy_curves_malaria} and \ref{fig:accuracy_curves_bod} display the AUC values and ROC curves for the Degree Product, Jaccard Coefficient, and Shortest Path predictors across varying fractions of observed edges. For the Malaria network, the Degree Product predictor consistently underperforms, yielding the lowest AUC values across all observed edge fractions. The Jaccard Coefficient performs best when the fraction of observed edges exceeds 0.5, while the Shortest Path predictor shows higher AUC values for lower fractions of observed edges ($f < 0.5$). In the ROC analysis, the Jaccard Coefficient provides the highest AUC, with the Shortest Path predictor following closely behind. For the Board of Directors network, the Shortest Path predictor outperforms the others across all observed edge fractions, though the Jaccard Coefficient approaches similar performance for fractions in the range $f \in [0.75,1]$. The ROC curves further support this observation, showing that the Shortest Path predictor achieves the best AUC, while the Degree Product remains close to random performance. Overall, the Jaccard Coefficient and Shortest Path predictors outperform the Degree Product predictor in both networks. However, the relative ranking of the Jaccard Coefficient and Shortest Path predictors differs between the two networks, indicating structural differences. The Malaria network benefits more from local similarity (Jaccard Coefficient), whereas the Board of Directors network is better predicted by global shortest-path relationships. The Degree Product's poor performance suggests that node connectivity alone is insufficient for accurate link prediction in these networks.
 
 \subsection*{Part B}
 
