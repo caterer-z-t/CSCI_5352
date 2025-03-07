@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2025.1.17)  7 FEB 2025 14:16
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2025.1.17)  6 MAR 2025 14:45
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -330,10 +330,110 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 20.
  (/Users/zc/Library/TinyTeX/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 23.
+LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 24.
  (/Users/zc/Library/TinyTeX/texmf-dist/tex/latex/psnfss/ts1ptm.fd
 File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
 )
+Underfull \hbox (badness 10000) in paragraph at lines 23--26
+
+ []
+
+
+Underfull \hbox (badness 1902) in paragraph at lines 27--30
+[]\OT1/ptm/m/n/10 Research fund-ing through the NSF spans var-i-ous
+ []
+
+
+Underfull \hbox (badness 1939) in paragraph at lines 27--30
+\OT1/ptm/m/n/10 es-tab-lished projects. As mod-ern re-search be-comes
+ []
+
+
+Underfull \hbox (badness 7379) in paragraph at lines 27--30
+\OT1/ptm/m/n/10 grants and cross-disciplinary pro-gram so-lic-i-ta-tions,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 27--30
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 31--36
+
+ []
+
+
+Underfull \hbox (badness 1924) in paragraph at lines 37--40
+\OT1/ptm/m/n/10 be-tween-ness cen-tral-ity, and eigen-vec-tor cen-tral-ity to
+ []
+
+
+Underfull \hbox (badness 1584) in paragraph at lines 37--40
+\OT1/ptm/m/n/10 iden-tify key play-ers and their roles in the re-search
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 37--40
+
+ []
+
+
+
+
+Underfull \hbox (badness 1259) in paragraph at lines 41--45
+\OT1/ptm/m/n/10 col-lab-o-ra-tive in-ten-sity in mod-ern re-search. Sec-ond,
+ []
+
+
+Underfull \hbox (badness 1742) in paragraph at lines 41--45
+\OT1/ptm/m/n/10 col-lab-o-ra-tion as ev-i-denced by more di-verse fund-ing
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 41--45
+
+ []
+
+
+Underfull \hbox (badness 1178) in paragraph at lines 46--49
+\OT1/ptm/m/n/10 avail-able NSF Awards database as our pri-mary data
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 46--49
+
+ []
+
+
+Underfull \hbox (badness 2856) in paragraph at lines 50--54
+[]\OT1/ptm/m/n/10 This re-search will pro-vide valu-able in-sights into
+ []
+
+
+Underfull \hbox (badness 5696) in paragraph at lines 50--54
+\OT1/ptm/m/n/10 fun-da-men-tal sci-ence over the past quarter-century,
+ []
+
+
+Underfull \hbox (badness 4940) in paragraph at lines 50--54
+\OT1/ptm/m/n/10 po-ten-tially in-form-ing fu-ture fund-ing strate-gies and
+ []
+
+
+Underfull \hbox (badness 1102) in paragraph at lines 50--54
+\OT1/ptm/m/n/10 re-search pol-icy de-ci-sions. The com-par-i-son be-tween
+ []
+
+
+Underfull \hbox (badness 1163) in paragraph at lines 50--54
+\OT1/ptm/m/n/10 adapted to in-creas-ingly com-plex sci-en-tific chal-lenges
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 50--54
+
+ []
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -358,18 +458,18 @@ Package rerunfilecheck Info: File `proposal.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 10007 strings out of 475178
- 153462 string characters out of 5765351
- 564271 words of memory out of 5000000
- 32860 multiletter control sequences out of 15000+600000
- 575007 words of font info for 76 fonts, out of 8000000 for 9000
+ 9993 strings out of 475178
+ 153333 string characters out of 5765351
+ 562089 words of memory out of 5000000
+ 32851 multiletter control sequences out of 15000+600000
+ 572916 words of font info for 67 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 75i,11n,79p,903b,513s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</Users/zc/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></Users/zc/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></Users/zc/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></Users/zc/Library/TinyTeX/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></Users/zc/Library/TinyTeX/texmf-dist/fonts/type1/urw/times/utmr8a.pfb>
-Output written on proposal.pdf (2 pages, 61170 bytes).
+ 75i,8n,79p,386b,513s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</Users/zc/Library/TinyTeX/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></Users/zc/Library/TinyTeX/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></Users/zc/Library/TinyTeX/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on proposal.pdf (2 pages, 43442 bytes).
 PDF statistics:
- 45 PDF objects out of 1000 (max. 8388607)
- 30 compressed objects within 1 object stream
+ 35 PDF objects out of 1000 (max. 8388607)
+ 24 compressed objects within 1 object stream
  5 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
