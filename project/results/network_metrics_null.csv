@@ -1,0 +1,9 @@
+Metric,Value,Group,Axis
+Nodes,2353.0,Historic WS,Count
+Edges,9412.0,Historic WS,Count
+Clustering,0.4697520098072584,Historic WS,Metric
+Average Path Length,5.759522508535926,Historic WS,Metric
+Nodes,3237.0,Modern WS,Count
+Edges,12948.0,Modern WS,Count
+Clustering,0.4741224861706789,Modern WS,Metric
+Average Path Length,6.074738814533593,Modern WS,Metric
